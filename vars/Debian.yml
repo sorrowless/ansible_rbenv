@@ -1,0 +1,11 @@
+---
+rbenv_packages:
+  - rbenv
+  - gcc
+  - git
+  - make
+  - libreadline-dev
+  - g++
+  - libcurl3-dev
+  - libssl-dev
+  - zlib1g-dev

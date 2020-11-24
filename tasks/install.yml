@@ -1,0 +1,40 @@
+---
+- name: Ensure autoload of rbenv for project owner
+  lineinfile:
+    path: '~/.bashrc'
+    regexp: '^eval "\$\(rbenv init -\)"'
+    line: 'eval "$(rbenv init -)"'
+
+- name: Get rbenv root location
+  command: 'rbenv root'
+  register: rbenv_root
+  changed_when: false
+
+- name: Ensure directories for ruby-build
+  file:
+    path: "{{ rbenv_root.stdout }}/plugins"
+    owner: "{{ rbenv_owner }}"
+    group: "{{ rbenv_owner }}"
+    mode: 0755
+    state: directory
+
+- name: Install ruby-build rbenv plugin
+  git:
+    repo: "https://github.com/rbenv/ruby-build.git"
+    dest: "{{ rbenv_root.stdout }}/plugins/ruby-build"
+    force: yes
+    version: master
+    ssh_opts: "-o StrictHostKeyChecking=no"
+  retries: 5
+  delay: 15
+
+- name: Ensure ruby versions
+  command: "rbenv install {{ item }}"
+  args:
+    creates: "{{ rbenv_root.stdout }}/versions/{{ item }}/bin/ruby"
+  with_items: "{{ rbenv_ruby_versions }}"
+
+- name: Set rbenv global
+  shell: rbenv global {{ rbenv_global }} && rbenv rehash
+  when: rbenv_global is defined
+  changed_when: false
