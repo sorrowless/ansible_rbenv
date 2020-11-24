@@ -5,7 +5,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: postgresql
+    - ROLE_NAME: rbenv
   matrix:
     - MOLECULE_DISTRO: ubuntu2004
     - MOLECULE_DISTRO: ubuntu1804
