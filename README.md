@@ -1,9 +1,9 @@
 # sbog/rbenv
 
 [![Build Status](https://travis-ci.com/sorrowless/ansible_rbenv.svg?branch=master)](https://travis-ci.com/sorrowless/ansible_rbenv)
-[![Ansible Role](https://img.shields.io/ansible/role/00000)](https://galaxy.ansible.com/sorrowless/rbenv)
-[![Ansible Quality Score](https://img.shields.io/ansible/quality/00000)](https://galaxy.ansible.com/sorrowless/rbenv)
-[![Ansible Role](https://img.shields.io/ansible/role/d/00000)](https://galaxy.ansible.com/sorrowless/rbenv)
+[![Ansible Role](https://img.shields.io/ansible/role/51987)](https://galaxy.ansible.com/sorrowless/rbenv)
+[![Ansible Quality Score](https://img.shields.io/ansible/quality/51987)](https://galaxy.ansible.com/sorrowless/rbenv)
+[![Ansible Role](https://img.shields.io/ansible/role/d/51987)](https://galaxy.ansible.com/sorrowless/rbenv)
 [![GitHub](https://img.shields.io/github/license/sorrowless/ansible_rbenv)](https://github.com/sorrowless/ansible_rbenv/blob/master/LICENSE)
 
 An Ansible role which installs and configures [rbenv](https://github.com/rbenv/rbenv) on Linux
