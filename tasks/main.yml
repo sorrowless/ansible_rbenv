@@ -14,6 +14,9 @@
     state: present
   become: true
 
+- debug:
+    msg: "Current rbenv owner is {{ rbenv_owner }}"
+
 - import_tasks: install.yml
   become: true
   become_user: "{{ rbenv_owner }}"

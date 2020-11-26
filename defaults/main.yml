@@ -1,6 +1,6 @@
 ---
 # defaults file for rbenv
-rbenv_owner: "{{ ansible_env.USER }}"
+rbenv_owner: "{{ ansible_user }}"
 rbenv_ruby_versions:
   - 2.7.1
 rbenv_global: "{{ rbenv_ruby_versions[0] }}"
