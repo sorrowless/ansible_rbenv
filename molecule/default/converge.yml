@@ -4,6 +4,7 @@
   become: true
 
   vars:
+    ansible_user: root
     rbenv_ruby_versions:
       - 2.7.1
 
